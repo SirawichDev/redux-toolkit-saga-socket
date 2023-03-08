@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Routes,
+  BrowserRouter as Router,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import NonAuthLayout from "./app/components/layout/NonAuthLayout";
+import { AllRoutes } from "./app/routes/allRoutes";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {AllRoutes.map((route, idx) => {
+        return (
+          !route.needAuth && (
+            <NonAuthLayout key={idx}>
+              <Route path={route.path} element={<route.component />}></Route>
+              <Route
+                path="*"
+                element={<Navigate to="/market/BTC_THB" replace />}
+              />
+            </NonAuthLayout>
+          )
+        );
+      })}
+    </>
   );
-}
+};
 
 export default App;
