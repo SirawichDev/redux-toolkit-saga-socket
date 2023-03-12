@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ExchangeMarket from "features/market/page";
+import ExchangeMarket from "features/marketSocket/page";
 
 type RouteProps = {
     path: string

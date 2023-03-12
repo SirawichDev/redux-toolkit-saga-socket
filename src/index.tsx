@@ -5,7 +5,7 @@ import 'app/assets/scss/index.scss';
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import Loader from "./app/components/layout/Loader";
+import Loader from "app/components/Loader";
 import { store } from "app/store";
 
 const root = ReactDOM.createRoot(

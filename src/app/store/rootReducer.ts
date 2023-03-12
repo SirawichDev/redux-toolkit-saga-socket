@@ -1,9 +1,9 @@
 import { connectRouter } from "connected-react-router";
 import { combineReducers } from "redux";
-import marketSlice from "features/market/marketSlice";
-import { history } from "utils";
+import marketSocketSlice from 'features/marketSocket/modules/socket/socket.slice'
+import { history } from "app/utils";
 
 export default combineReducers({
     router: connectRouter(history),
-    market: marketSlice
+    marketSocket: marketSocketSlice
 });

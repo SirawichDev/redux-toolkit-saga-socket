@@ -17,7 +17,7 @@ const App = () => {
               <Route path={route.path} element={<route.component />}></Route>
               <Route
                 path="*"
-                element={<Navigate to="/market/BTC_THB" replace />}
+                element={<Navigate to="/market/welcome" replace />}
               />
             </NonAuthLayout>
           )

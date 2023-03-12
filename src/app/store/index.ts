@@ -5,7 +5,7 @@ import storage from 'redux-persist/lib/storage'
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
 import { routerMiddleware } from "connected-react-router";
-import { history } from "utils";
+import { history } from "app/utils";
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -18,7 +18,7 @@ const sagaMiddleware = createSagaMiddleware();
 export const store = configureStore({
     reducer: rootReducer,
     devTools: process.env.NODE_ENV !== 'production',
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(sagaMiddleware, logger, routerMiddleware(history))
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(sagaMiddleware, routerMiddleware(history))
 });
 
 
