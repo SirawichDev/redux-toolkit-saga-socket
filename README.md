@@ -8,8 +8,8 @@
 ### How to run
     With Docker
         - run docker application
-        - docker build -t satang-dev .
-        - docker run --rm  --name satang-dev -p 5173:5173 satang-dev:latest
+        - docker build -t satang-dev-socket .
+        - docker run --rm  --name satang-dev-socket -p 5173:5173 satang-dev-socket:latest
     With NPM
-        - npm install --force
+        - npm install --legacy-peer-deps
         - npm run start
