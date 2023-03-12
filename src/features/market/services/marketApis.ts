@@ -1,5 +1,5 @@
 import { AxiosResponse, AxiosStatic } from "axios";
-import { get } from "../../../app/network/client";
+import { get } from "app/network/client";
 
 const URL = {
   GET_24HR_TICKER: "v3/ticker/24hr",

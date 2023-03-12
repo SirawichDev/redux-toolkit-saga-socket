@@ -1,9 +1,6 @@
 import { current, PayloadAction } from "@reduxjs/toolkit";
 import {
-  take,
-  fork,
   call,
-  takeEvery,
   takeLatest,
   put,
   delay,

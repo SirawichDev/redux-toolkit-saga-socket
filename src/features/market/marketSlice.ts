@@ -1,7 +1,6 @@
 import {
   createSelector,
   createSlice,
-  current,
   PayloadAction,
 } from "@reduxjs/toolkit";
 import { RootState, store } from "app/store";
@@ -34,7 +33,6 @@ export const marketSlice = createSlice({
         .sort((a, b) => b.quoteVolume - a.quoteVolume)
         .slice(0, 3);
       state.itemSelected = state.data[0];
-      // push('/market/ffff')
       state.loading = false;
     },
     fetchPairDetail(state, action: PayloadAction<string>) {
