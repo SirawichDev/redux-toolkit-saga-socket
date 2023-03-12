@@ -22,6 +22,7 @@ function* fetchMarketList() {
     if (Array.isArray(response)) {
       yield put(push(`/market/${response[0].symbol.toUpperCase()}`))
       yield put(marketAactions.fetchMarketSuccess(response));
+      yield put(marketAactions.fetchPairDetail(response[0].symbol))
     }
   } catch (error: unknown) {
     const castErr = error as Error;
