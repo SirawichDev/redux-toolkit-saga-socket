@@ -4,15 +4,11 @@ import {
   Layout,
   List,
   Row,
-  Skeleton,
-  Space,
   Spin,
   Statistic,
   Typography,
 } from "antd";
-import Avatar from "antd/es/avatar/avatar";
 import { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
 import SkeletonList from "app/components/skeleton";
 import { useAppDispatch, useAppSelector } from "app/store/hooks";
 import { Ticker } from "features/market/models";
@@ -22,25 +18,17 @@ import {
   pairSelecting,
   pairSelector,
   selectMarketLoading,
-} from "features/market/marketSlice";
+} from "features/market/modules/market.slice";
 import { Content, Header } from "antd/es/layout/layout";
-import Paragraph from "antd/es/skeleton/Paragraph";
 function ExchangeMarket() {
   const [activeId, setActive] = useState(0)
-  const { exchange_name } = useParams();
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    console.log('paramss', exchange_name)
-  }, [exchange_name])
   useEffect(() => {
     dispatch(marketAactions.fetchMarket(""));
   }, [dispatch]);
 
   const marketTickers = useAppSelector(marketListSelector);
-  console.log("🚀 ~ file: index.tsx:42 ~ ExchangeMarket ~ marketTickers:", marketTickers)
   const pairSelected = useAppSelector(pairSelector)
-  console.log("🚀 ~ file: index.tsx:41 ~ ExchangeMarket ~ pairSelected:", pairSelected)
-  // console.log("🚀 ~ file: index.tsx:36 ~ ExchangeMarket ~ marketTickers:", marketTickers)
   const dataLoading = useAppSelector(selectMarketLoading);
   const isPairSelecting = useAppSelector(pairSelecting)
   const fetchDetail = (item: Ticker, selectedIdx: number) => {
@@ -53,7 +41,7 @@ function ExchangeMarket() {
       <Layout className="market">
         <Header className="market__header"></Header>
         <Content>
-          <Row gutter={12} className="market__container">
+          <Row justify={'center'} gutter={12} className="market__container">
             <Col span={12}>
               <SkeletonList row={4} loading={dataLoading}>
                 <List

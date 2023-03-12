@@ -8,16 +8,14 @@ import {
   put,
   delay,
 } from "redux-saga/effects";
-import { FlatCurrency, Ticker } from "./models";
-import marketApi from "./services/marketApis";
-import { marketAactions, MarketPayload } from "features/market/marketSlice";
+import { FlatCurrency, Ticker } from "../models";
+import marketApi from "../services/marketApis";
+import { marketAactions, MarketPayload } from "features/market/modules/market.slice";
 import { push } from "connected-react-router";
 
 function* fetchMarketList() {
   try {
-    // yield delay(5000);
     const currency: FlatCurrency[] = yield call(marketApi.getFlatCurrency)
-    console.log("🚀 ~ file: marketSaga.ts:20 ~ function*fetchMarketList ~ currency:", currency)
     const response: Ticker[] = yield call(marketApi.get24hrTickers);
     if (Array.isArray(response)) {
       yield put(push(`/market/${response[0].symbol.toUpperCase()}`))
@@ -33,6 +31,7 @@ function* fetchMarketList() {
 
 function* fetchPairDetail(action: PayloadAction<string>) {
   const response: Ticker = yield call(marketApi.get24hrTickers, action.payload);
+  yield put(push(`/market/${response.symbol.toUpperCase()}`))
   yield put(marketAactions.selectPair(response))
 
   while(true) {

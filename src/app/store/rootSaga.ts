@@ -1,5 +1,5 @@
-import { fork, all } from "redux-saga/effects";
-import { marketSaga } from "features/market/marketSaga";
+import { all } from "redux-saga/effects";
+import { marketSaga } from "features/market/modules/market.saga";
 
 
 export default function* rootSaga() {

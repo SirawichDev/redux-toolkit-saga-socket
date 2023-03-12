@@ -12,6 +12,11 @@ export default defineConfig({
     strictPort: true,
     port: 5173, 
   },
+  define: {
+    'process.env': {
+      BASE_URL: 'https://satangcorp.com/api/'
+    }
+  },
   resolve: {
     preserveSymlinks: true,
     alias: [
