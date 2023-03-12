@@ -1,0 +1,47 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+$primary: white;
+$white: white;
+$grey: #adabab;
+
+.active {
+  border: 2px solid black !important;
+  border-radius: 8px;
+  // box-shadow: 10px -20px 0 0 gold 9px -13px 10px 3px black;
+}
+.market {
+    background-color: $white;
+    &__header {
+        background-color: white;
+    }
+    &__container {
+        background-color: $white;
+        // padding: 20px;
+        .market-list {
+            &:hover {
+                // margin-bottom: 20px;
+                background-color: $grey;
+                cursor: pointer;
+            }
+            &:focus-within {
+              background-color: red;
+            }
+            &:visited, :focus {
+              background-color: red;
+            }
+        }
+    }
+}

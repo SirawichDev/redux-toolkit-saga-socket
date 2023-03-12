@@ -4,8 +4,8 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import NonAuthLayout from "./app/components/layout/NonAuthLayout";
-import { AllRoutes } from "./app/routes/allRoutes";
+import NonAuthLayout from "app/components/layout/NonAuthLayout";
+import { AllRoutes } from "app/routes/allRoutes";
 
 const App = () => {
   return (

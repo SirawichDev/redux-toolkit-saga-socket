@@ -1,11 +1,12 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import 'app/assets/scss/index.scss';
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import Loader from "./app/components/layout/Loader";
-import { store } from "./app/store";
+import { store } from "app/store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
