@@ -3,7 +3,7 @@
 ## Branch
 there are seperated into 2 branch 
 - ``` main ``` is websocket connection
-- ``` market-api-integration ``` normal api connection (with setInterval called)
+- ``` feature/market-api-integration ``` normal api connection (with delay called)
 ### Tech Stack
 - React (Vite)
 - Typescript
