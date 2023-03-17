@@ -1,5 +1,8 @@
 # Satang Corp Assignment (Websocket)
 
+
+## API
+i'm using Satang api (public) for this project you can checkout they website here (https://docs.satangcorp.com/#auth-info-ed364eb6-d202-4cf4-a3fa-058262afdaab)
 ## Branch
 there are seperated into 2 branch 
 - ``` main ``` is websocket connection
