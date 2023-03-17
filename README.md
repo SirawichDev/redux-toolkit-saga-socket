@@ -1,9 +1,15 @@
 # Satang Corp Assignment (Websocket)
+
+## Branch
+there are seperated into 2 branch 
+- ``` main ``` is websocket connection
+- ``` market-api-integration ``` normal api connection (with setInterval called)
 ### Tech Stack
 - React (Vite)
 - Typescript
 - Redux + Redux Toolkit
 - Redux Saga
+- WS
 
 ### How to run
     With Docker
