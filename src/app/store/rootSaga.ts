@@ -1,9 +1,7 @@
-import { fork, all } from "redux-saga/effects";
-import { marketSaga } from "../../features/ExchangeMarket/saga";
-
-
+import { fork, all, takeEvery, takeLatest } from "redux-saga/effects";
+import { websocketManager } from 'features/marketSocket/modules/socket/socket.saga'
 export default function* rootSaga() {
     yield all([
-        marketSaga()
+        fork(websocketManager, String(process.env.SATANG_WEB_SOCKET)),
     ])
 }
