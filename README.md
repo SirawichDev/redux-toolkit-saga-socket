@@ -1,4 +1,4 @@
-# Satang Corp Assignment (Websocket)
+# Satang Corp (Websocket)
 
 
 ## API
