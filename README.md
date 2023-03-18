@@ -1,4 +1,4 @@
-# Satang Corp Assignment
+# Satang Corp
 ### Tech Stacks
 - React (Vite)
 - Typescript
